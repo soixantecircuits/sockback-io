@@ -60,7 +60,7 @@ module.exports = (function home() {
         },
         saveAs: function () {
           dialog.showSaveDialog(null, function (filePath) {
-            fs.writeFile(filePath, ctrl.vue.sFrames, (err) => {
+            fs.writeFile(filePath, JSON.stringify(ctrl.vue.frames), (err) => {
               if (err) {
                 throw err
               } else {

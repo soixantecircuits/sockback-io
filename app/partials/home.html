@@ -27,7 +27,7 @@
           <mdl-button v-on:click="startRecord" v-mdl-ripple-effect>Start</mdl-button>
           <mdl-button v-on:click="stopRecord" v-mdl-ripple-effect>Stop</mdl-button>
           
-          <mdl-textfield :value.sync="sFrames" floating-label="Frames" textarea rows="5"></mdl-textfield>
+          Frames length <span>{{lengthFrame}}</span>
           <mdl-button v-on:click="saveAs" v-mdl-ripple-effect>Save as</mdl-button>
         </div>
       </main>
@@ -36,6 +36,7 @@
   </div>
   <div class="mdl-tabs__panel" id="play-panel">
     <div id="play-card" class="mdl-card mdl-shadow--6dp">
+      Playing on http://127.0.0.1:3300 
       <mdl-button v-on:click="openAs" v-mdl-ripple-effect>Open Frame</mdl-button>
       <mdl-textfield :value.sync="sPlayFrames" floating-label="Frames" textarea rows="5"></mdl-textfield>
       <mdl-button v-on:click="startPlay" v-mdl-ripple-effect>Start</mdl-button>

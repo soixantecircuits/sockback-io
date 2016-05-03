@@ -27,13 +27,13 @@ function onClosed () {
 }
 
 function createMainWindow () {
-  var winOptions = {width: 1920, height: 1080}
+  var winOptions = {width: 500, height: 800}
   if (process.env['NODE_ENV'] !== 'dev') {
     winOptions.kiosk = true
     winOptions.frame = false
-    winOptions.resizable = false
-    winOptions.fullScreen = true
-    winOptions.alwaysOnTop = true
+    winOptions.resizable = true
+    winOptions.fullScreen = false
+    winOptions.alwaysOnTop = false
   }
   winOptions.webPreferences = {
     webSecurity: false,

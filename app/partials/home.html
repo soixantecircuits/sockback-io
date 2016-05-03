@@ -1,5 +1,46 @@
-<h2>Home view</h2>
+<div id="sockback-io" class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+  <div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+    <h2 class="mdl-card__title-text">Sockback-io - Record & Playback socket.io event</h2>
+  </div>
+  <div class="mdl-tabs__tab-bar">
+      <a href="#record-panel" class="mdl-tabs__tab is-active">Record</a>
+      <a href="#play-panel" class="mdl-tabs__tab">Play</a>
+  </div>
 
-<a href="#/page-1">Go to page 1</a>
-<a href="#/page-2">Go to page 2</a>
+  <div class="mdl-tabs__panel is-active" id="record-panel">
+    <div id="connect" class="mdl-layout mdl-js-layout mdl-color--grey-100">
+      <main class="mdl-layout__content">
+        <div id="record-card" class="mdl-card mdl-shadow--6dp">
+          <div class="mdl-card__supporting-text">
+            <form action="#">
+              <div class="mdl-textfield mdl-js-textfield">
+                <mdl-textfield label="host" id="host" :value.sync="host"></mdl-textfield>
+              </div>
+              <div class="mdl-textfield mdl-js-textfield">
+                <mdl-textfield label="port" id="port" type="text" :value.sync="port"></mdl-textfield>
+              </div>
+            </form>
+          </div>
+          <div class="mdl-card__actions mdl-card--border">
+            <mdl-button id="submitLogin" v-on:click="connect" v-mdl-ripple-effect>Connect</mdl-button>
+          </div>
+          <mdl-button v-on:click="startRecord" v-mdl-ripple-effect>Start</mdl-button>
+          <mdl-button v-on:click="stopRecord" v-mdl-ripple-effect>Stop</mdl-button>
+          
+          <mdl-textfield :value.sync="sFrames" floating-label="Frames" textarea rows="5"></mdl-textfield>
+          <mdl-button v-on:click="saveAs" v-mdl-ripple-effect>Save as</mdl-button>
+        </div>
+      </main>
+    </div>
+
+  </div>
+  <div class="mdl-tabs__panel" id="play-panel">
+    <div id="play-card" class="mdl-card mdl-shadow--6dp">
+      <mdl-button v-on:click="openAs" v-mdl-ripple-effect>Open Frame</mdl-button>
+      <mdl-textfield :value.sync="sPlayFrames" floating-label="Frames" textarea rows="5"></mdl-textfield>
+      <mdl-button v-on:click="startPlay" v-mdl-ripple-effect>Start</mdl-button>
+      <mdl-button v-on:click="stopPlay" v-mdl-ripple-effect>Stop</mdl-button>  
+    </div>
+  </div>
+</div>
 

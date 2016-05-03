@@ -86,7 +86,8 @@ module.exports = (function router () {
       return
     }
     self.transitionning = true
-
+    var state
+    var id
     // store the last route
     self.past = self.current
     // store current route

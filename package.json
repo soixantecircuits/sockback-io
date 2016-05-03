@@ -9,7 +9,6 @@
   },
   "electronVersion": "0.37.8",
   "scripts": {
-    "postinstall": "echo $npm_package_version > $npm_package_name.version && git add $npm_package_name.version && git commit -m \"Add version number\"",
     "start": "export NODE_ENV='dev'; electron .",
     "start-win": "set NODE_ENV=dev&&electron .",
     "build-osx": "export NODE_ENV='production' && electron-packager . $npm_package_name --out=bin --platform=darwin --arch=x64 --ignore='^/bin$' --prune --version=$npm_package_electronVersion --overwrite && cp $npm_package_name.version ./bin/$npm_package_name-$npm_package_version-darwin-x64/",
@@ -23,10 +22,21 @@
     "index.js"
   ],
   "dependencies": {
+    "bufferutil": "1.2.1",
     "crossroads": "^0.12.2",
+    "elapsed-time": "0.0.1",
     "electron-debug": "^0.5.0",
+    "gsap": "1.18.4",
     "hasher": "^1.2.0",
-    "signals": "^1.0.0"
+    "jquery": "2.2.3",
+    "lodash": "4.11.2",
+    "material-design-icons": "2.2.3",
+    "material-design-lite": "1.1.3",
+    "signals": "^1.0.0",
+    "socket.io": "1.4.4",
+    "socket.io-client": "1.4.4",
+    "vue": "1.0.21",
+    "vue-mdl": "0.7.4"
   },
   "devDependencies": {
     "standard": "^3.0.0",
@@ -46,6 +56,6 @@
     "script-loader": "^0.6.1",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.9"
+    "webpack": "^1.12.12"
   }
 }
